@@ -92,6 +92,8 @@ def check_topic_owner(request, topic_id):
     if topic.owner != request.user:
         raise Http404
 
+        
+@login_required
 def check_entry_owner(request, entry_id):
     topic = Topic.objects.get(id=topic_id)
     entry = Entry.objects.get(id=entry_id)
